@@ -1,5 +1,9 @@
 package isi.died.lab99.domain;
 
+import java.util.List;
+
+import isi.died.lab99.domain.exceptions.HorasNoDisponiblesException;
+
 public abstract class Empleado {
 
 	protected String nombre;
@@ -7,6 +11,8 @@ public abstract class Empleado {
 	protected Byte seniority;
 	protected Integer horasMaxDevDia;
 	protected Integer horasMaxOtrasDia;
+	
+	protected List<Agendable> tareasAgendadas;
 	
 	public String getNombre() {
 		return nombre;
@@ -33,5 +39,8 @@ public abstract class Empleado {
 		this.horasMaxOtrasDia = horasMaxOtrasDia;
 	}
 	
-	
+	public abstract Double costo(Tarea t) ;
+
+	public abstract void agregar(Agendable a) throws HorasNoDisponiblesException ;
+
 }

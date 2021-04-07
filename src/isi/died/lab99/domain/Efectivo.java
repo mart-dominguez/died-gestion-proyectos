@@ -1,5 +1,7 @@
 package isi.died.lab99.domain;
 
+import isi.died.lab99.domain.exceptions.HorasNoDisponiblesException;
+
 public class Efectivo extends Empleado {
 
 	private Double sueldoBase;
@@ -15,6 +17,18 @@ public class Efectivo extends Empleado {
 	}
 	public void setAntig(Integer antig) {
 		this.antig = antig;
+	}
+	
+	@Override
+	public Double costo(Tarea t) {
+		Double precioHora = this.sueldoBase / 20 / this.horasMaxDevDia + this.horasMaxOtrasDia;
+		return (t.duracion() * precioHora) * t.incremento();
+	}
+	
+	@Override
+	public void agregar(Agendable a) throws HorasNoDisponiblesException {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
