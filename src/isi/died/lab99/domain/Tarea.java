@@ -3,6 +3,8 @@ package isi.died.lab99.domain;
 import java.time.Duration;
 import java.time.Instant;
 
+import isi.died.lab99.domain.exceptions.SeniorityNoAlcanzadaException;
+
 public abstract class Tarea implements Agendable{
 	
 	protected String descripcion;
@@ -31,7 +33,9 @@ public abstract class Tarea implements Agendable{
 	}
 	
 	@Override
-	public abstract void asignarEmpleado(Empleado e);
+	public abstract void asignarEmpleado(Empleado e) throws SeniorityNoAlcanzadaException;
+	
+	public abstract Double incremento();
 	
 	@Override
 	public final Integer duracion() {
@@ -41,3 +45,5 @@ public abstract class Tarea implements Agendable{
 	public Long dias() {
 		return Duration.between(fechaInicio, fechaFin).toDays();
 	}
+	
+}

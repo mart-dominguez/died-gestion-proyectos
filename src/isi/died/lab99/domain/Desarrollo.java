@@ -23,4 +23,14 @@ public class Desarrollo extends Tarea{
 		
 	}
 	
+	@Override
+	public Double incremento() {
+		return 1 + (this.riesgo / 2.0);
+	}
+	
+	@Override
+	public Boolean esDesarrollo() {
+		return true;
+	}
+	
 }
