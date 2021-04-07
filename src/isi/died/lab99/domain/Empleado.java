@@ -3,6 +3,7 @@ package isi.died.lab99.domain;
 import java.util.List;
 
 import isi.died.lab99.domain.exceptions.HorasNoDisponiblesException;
+import isi.died.lab99.domain.exceptions.SeniorityNoAlcanzadaException;
 
 public abstract class Empleado {
 
@@ -41,6 +42,6 @@ public abstract class Empleado {
 	
 	public abstract Double costo(Tarea t) ;
 
-	public abstract void agregar(Agendable a) throws HorasNoDisponiblesException ;
+	public abstract void agregar(Agendable a) throws HorasNoDisponiblesException, SeniorityNoAlcanzadaException ;
 
 }

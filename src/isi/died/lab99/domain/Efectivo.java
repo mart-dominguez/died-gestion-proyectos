@@ -1,6 +1,7 @@
 package isi.died.lab99.domain;
 
 import isi.died.lab99.domain.exceptions.HorasNoDisponiblesException;
+import isi.died.lab99.domain.exceptions.SeniorityNoAlcanzadaException;
 
 public class Efectivo extends Empleado {
 
@@ -26,7 +27,7 @@ public class Efectivo extends Empleado {
 	}
 	
 	@Override
-	public void agregar(Agendable a) throws HorasNoDisponiblesException {
+	public void agregar(Agendable a) throws HorasNoDisponiblesException,SeniorityNoAlcanzadaException {
 		// TODO Auto-generated method stub
 		
 	}
